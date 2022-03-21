@@ -1,0 +1,2 @@
+#Dependencies: SPAdes, recycler, samtools, platon, & plasforest.
+#don't use git clone, just curl
