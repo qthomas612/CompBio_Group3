@@ -3,23 +3,24 @@
 FROM ubuntu:focal
 
 # Update OS, install any needed packages here
-RUN apt-get update && apt-get install -y autoconf && \
-    automake && \
-    gcc && \
-    libbz2-dev && \
-    liblzma-dev && \
-    libcurl4-gnutls-dev && \
-    libssl-dev && \
-    libncurses5-dev && \
-    make && \
-    ncbi-blast+ && \
-    perl && \
-    zlib1g-dev
+RUN apt-get update && apt-get install -y wget zip
+   # apt-utils && \
+   # gcc && \
+   # libbz2-dev && \
+   # liblzma-dev && \
+   # libcurl4-gnutls-dev && \
+   # libssl-dev && \
+   # libncurses5-dev && \
+   # make && \
+   # ncbi-blast+ && \
+   # perl && \
+   # zlib1g-dev
 
 # install conda
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ./miniconda.sh && \
     bash ./miniconda.sh -b -p $HOME/miniconda && \
 ENV PATH=$HOME/miniconda/bin:$PATH
+RUN conda activate base
 
 # spades 3.15.4 install
 RUN wget https://cab.spbu.ru/files/release3.15.4/SPAdes-3.15.4-Linux.tar.gz && \
@@ -31,7 +32,7 @@ ENV PATH=$HOME/SPAdes-3.15.4-Linux/bin/:$PATH
 RUN wget https://github.com/Shamir-Lab/Recycler/releases/download/v0.7/Recycler-v0.7.zip && \
     unzip Recycler-v0.7.zip && \
     rm Recycler-v0.7.zip && \
-    cd Recycler-v0.7 && \
+    cd Recycler-0.7 && \
     python setup.py install --user && \
     cd ~/
 
