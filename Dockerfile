@@ -3,8 +3,9 @@
 FROM ubuntu:focal
 
 # Update OS, install any needed packages here
-RUN apt-get update
-RUN apt-get install -y wget zip
+RUN  apt-get update \
+  && apt-get install -y wget \
+  && rm -rf /var/lib/apt/lists/
    # autoconf && \
    # apt-utils && \
    # gcc && \
