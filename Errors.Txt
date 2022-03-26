@@ -1,2 +1,9 @@
 /bin/sh: 1: ENV: not found
 ##Solved by making sure its not running in consle by checking for extra && \
+/bin/sh: 1: zip: not found
+##Solved with
+  RUN  apt-get update \
+  && apt-get install -y zip
+  
+/bin/sh: 1: cd: can't cd to Recycler-v0.7
+##Need help fixing this
