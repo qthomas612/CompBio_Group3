@@ -4,14 +4,14 @@ FROM ubuntu:focal
 RUN  apt-get update \
   && apt-get install -y wget \
   && rm -rf /var/lib/apt/lists/
-
+RUN  apt-get update \
+  && apt-get install -y zip
 # Update OS, install any needed packages here
 RUN apt-get update && apt-get install -y ncbi-blast+ && \
     perl
-
 # install conda
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ./miniconda.sh && \
-    bash ./miniconda.sh -b -p $HOME/miniconda && \
+    bash ./miniconda.sh -b -p $HOME/miniconda 
 ENV PATH=$HOME/miniconda/bin:$PATH
 
 # spades 3.15.4 install
