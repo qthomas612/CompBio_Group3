@@ -47,8 +47,22 @@ RUN wget https://github.com/samtools/samtools/releases/download/1.15/samtools-1.
     make install && \
     cd ~/
 
+#install platon dependencies: Prodigal, Diamond, Blast+, MUMmer, HMMER, Infernal
+RUN git clone https://github.com/hyattpd/prodigal && \
+    cd Prodigal && \
+    make install && \
+    #sudo apt install prodigal
+
+RUN wget http://github.com/bbuchfink/diamond/releases/download/v2.0.13/diamond-linux64.tar.gz && \
+    tar -xzf diamond-linux64.tar.gz
+
+RUN wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.13.0+-x64-arm-linux.tar.gz &&\
+    tar -xzf ncbi-blast-2.13.0+-x64-arm-linux.tar.gz
+
+
 # platon install
-RUN conda install -c conda-forge -c bioconda -c defaults -y platon && \
+# conda is being a brat so let's try using pip
+RUN python3 -m pip install --user cb-platon && \
     wget https://zenodo.org/record/4066768/files/db.tar.gz && \
     tar -xzf db.tar.gz && \
     rm db.tar.gz
