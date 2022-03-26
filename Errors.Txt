@@ -1,2 +1,2 @@
 /bin/sh: 1: ENV: not found
-##Potientally soved by install ENV command like we did for wget
+##Solved by making sure its not running in consle by checking for extra && \
