@@ -7,3 +7,7 @@
   
 /bin/sh: 1: cd: can't cd to Recycler-v0.7
 ##Need help fixing this
+
+
+## Dockerfile4
+conda command not found
