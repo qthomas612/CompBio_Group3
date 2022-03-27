@@ -8,7 +8,8 @@ cd /root
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ./miniconda.sh
 chmod 755 miniconda.sh
 ./miniconda.sh -b -p /root/miniconda
-
+conda init bash
+source /root/.profile
 
 # spades 3.15.4
 wget https://cab.spbu.ru/files/release3.15.4/SPAdes-3.15.4-Linux.tar.gz
@@ -24,7 +25,6 @@ unzip Recycler-v0.7.zip
 cd Recycler-0.7
 python3 setup.py install --user
 cd /root
-
 conda activate base
 
 # samtools
