@@ -3,6 +3,19 @@
 
 import os
 
-os.system("spades.py --test")
+#first we must test SPADES as this is a requirement for many of the other programs
+wd = os.getcwd()
+os.system("spades.py --test > spadestest.log")
+spadesresults = wd + "/spades_test/"
+
+
+#Next we can test recycler. For this we need the graph and a bam file. Let's start with the bamFile
+#Following recycler installation page...
+os.systen("make_fasta_from_fastg.py -g assembly_graph.fastg [-o assembly_graph.nodes.fasta]")
+os.systen("bwa index assembly_graph.nodes.fasta")
+os.systen("bwa mem assembly_graph.nodes.fasta R1.fastq.gz R2.fastq.gz | samtools view -buS - > reads_pe.bam")
+os.systen("samtools view -bF 0x0800 reads_pe.bam > reads_pe_primary.bam")
+os.systen("samtools sort reads_pe_primary.bam reads_pe_primary.sort.bam")
+os.systen("samtools index reads_pe_primary.sort.bam")
 
 #etc etc
