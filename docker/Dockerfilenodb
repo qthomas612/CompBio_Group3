@@ -29,8 +29,8 @@ RUN chmod 755 /root/install.sh
 
 RUN /root/install.sh
 
-COPY download_db.sh /root
+#COPY download_db.sh /root
 
-RUN chmod 755 /root/download_db.sh
+#RUN chmod 755 /root/download_db.sh
 
-RUN /root/download_db.sh
+#RUN /root/download_db.sh
