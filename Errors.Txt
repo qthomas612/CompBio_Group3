@@ -9,5 +9,8 @@
 ##Need help fixing this
 
 
-## Dockerfile4
-conda command not found
+## Tristan - docker folder dockerfile
+Error: CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run ....
+
+Problem to solve: Need to activate conda so recycler is installed in the python 2.7 environment
