@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y autoconf \
 
 COPY install.sh /root
 
-ENV PATH=/root/miniconda/bin/:/root/SPAdes-3.15.4-Linux/bin/:$PATH
+ENV PATH=/root/miniconda/bin/:/root/SPAdes-3.15.4-Linux/bin/:/root/bwa-0.7.17:$PATH
 
 ENV PLATON_DB=/root/db/
 

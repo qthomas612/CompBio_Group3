@@ -22,6 +22,7 @@ wget https://github.com/Shamir-Lab/Recycler/releases/download/v0.7/Recycler-v0.7
 chmod 755 Recycler-v0.7.zip
 unzip Recycler-v0.7.zip
 rm Recycler-v0.7.zip
+chmod 755 -R ./Recycler-0.7
 cd Recycler-0.7
 python3 setup.py install --user
 cd /root
@@ -32,6 +33,7 @@ wget https://github.com/samtools/samtools/releases/download/1.15/samtools-1.15.t
 chmod 755 samtools-1.15.tar.bz2
 tar -xf samtools-1.15.tar.bz2
 rm samtools-1.15.tar.bz2
+chmod 755 -R ./samtools-1.15
 cd samtools-1.15
 make
 make install
@@ -40,13 +42,14 @@ cd /root
 
 # We also need bwa if we follow recycler recommendations
 # bwa
-# wget https://sourceforge.net/projects/bio-bwa/files/bwa-0.7.17.tar.bz2
-# chmod 755 bwa-0.7.17.tar.bz2
-# tar -xvf bwa-0.7.17.tar.bz2
-# cd bwa-0.7.17
-# make
-# export PATH=$PATH:/root/bwa-0.7.17
-# source /root/.profile
+wget https://sourceforge.net/projects/bio-bwa/files/bwa-0.7.17.tar.bz2
+chmod 755 bwa-0.7.17.tar.bz2
+tar -xvf bwa-0.7.17.tar.bz2
+rm bwa-0.7.17.tar.bz2
+chmod 755 -R bwa-0.7.17
+cd bwa-0.7.17
+make
+cd /root
 
 # platon
 conda install -c conda-forge -c bioconda -c defaults -y platon
@@ -57,3 +60,5 @@ cd PlasForest
 tar -zxvf plasforest.sav.tar.gz
 rm plasforest.sav.tar.gz
 chmod 755 database_downloader.sh
+
+source /root/.profile
