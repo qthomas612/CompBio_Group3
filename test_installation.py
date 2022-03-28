@@ -3,19 +3,31 @@
 
 import os
 
-#first we must test SPADES as this is a requirement for many of the other programs
+#SPADES test
 wd = os.getcwd()
 os.system("spades.py --test > spadestest.log")
 spadesresults = wd + "/spades_test/"
 
 
-#Next we can test recycler. For this we need the graph and a bam file. Let's start with the bamFile
-#Following recycler installation page...
-os.system("make_fasta_from_fastg.py -g assembly_graph.fastg [-o assembly_graph.nodes.fasta]")
+#RECYCLER TEST 
+#For this we need the graph and a bam file. Let's start with the bamFile
+os.system("conda activate recycler")
+os.system("make_fasta_from_fastg.py -g ./spades_test/assembly_graph.fastg [-o assembly_graph.nodes.fasta]")
 os.system("bwa index assembly_graph.nodes.fasta")
 os.system("bwa mem assembly_graph.nodes.fasta R1.fastq.gz R2.fastq.gz | samtools view -buS - > reads_pe.bam")
 os.system("samtools view -bF 0x0800 reads_pe.bam > reads_pe_primary.bam")
 os.system("samtools sort reads_pe_primary.bam reads_pe_primary.sort.bam")
 os.system("samtools index reads_pe_primary.sort.bam")
 
+os.system("recycle.py -g ./spades_test/assembly_graph.fastg -k 55 -b reads_pe_primary.sort.bam -i True")
+os.system("conda deactivate")
+
+#platon
+os.system()
+
+#plasforest
+ 
+
+
+#lol why did I not make this a shell script
 #etc etc
