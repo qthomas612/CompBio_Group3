@@ -10,5 +10,6 @@ Using the Dockerfile:
   docker run -it plasmid:latest bash
   
 Test docker build:
+
   python3 test_installation.py
   
