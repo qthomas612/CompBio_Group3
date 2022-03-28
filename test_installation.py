@@ -3,6 +3,9 @@
 
 import os
 
+#Some kind of trimmomatic test
+
+
 #SPADES test
 wd = os.getcwd()
 os.system("spades.py --test > spadestest.log")
