@@ -37,6 +37,17 @@ make
 make install
 cd /root
 
+
+# We also need bwa if we follow recycler recommendations
+# bwa
+# wget https://sourceforge.net/projects/bio-bwa/files/bwa-0.7.17.tar.bz2
+# chmod 755 bwa-0.7.17.tar.bz2
+# tar -xvf bwa-0.7.17.tar.bz2
+# cd bwa-0.7.17
+# make
+# export PATH=$PATH:/root/bwa-0.7.17
+# source /root/.profile
+
 # platon
 conda install -c conda-forge -c bioconda -c defaults -y platon
 
