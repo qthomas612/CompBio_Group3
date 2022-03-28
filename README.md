@@ -9,3 +9,6 @@ Using the Dockerfile:
 3. The docker container with the databases can be accessed by running:
   docker run -it plasmid:latest bash
   
+Test docker build:
+  python3 test_installation.py
+  
