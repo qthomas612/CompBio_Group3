@@ -4,7 +4,7 @@
 import os
 
 #Some kind of trimmomatic test
-
+#os.system(java -jar PE [-threads <threads] [-phred33 | -phred64] [-trimlog ] <input 1> <input 2> <paired output 1> <unpaired output 1> <paired output 2> <unpaired output 2> <step 1>)
 
 #SPADES test
 wd = os.getcwd()
