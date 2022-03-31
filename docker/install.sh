@@ -39,8 +39,9 @@ make
 make install
 cd /root
 
+# Trimmomatic
+conda install -c bioconda trimmomatic
 
-# We also need bwa if we follow recycler recommendations
 # bwa
 wget https://sourceforge.net/projects/bio-bwa/files/bwa-0.7.17.tar.bz2
 chmod 755 bwa-0.7.17.tar.bz2
