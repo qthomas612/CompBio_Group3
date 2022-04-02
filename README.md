@@ -10,6 +10,7 @@ Using the Dockerfile:
   `docker run --mount type=bind,source=/home/qthomas/data,target=/data -it plasmid:latest bash`
     - when writing to /data in the docker container, those files will also be written to /home/qthomas/data.
     - multiple folders can be bound i.e. `docker run --mount type=bind,source=/home/qthomas/data,target=/data --mount type=bind,source=/home/qthomas/results,target=/results -it plasmid:latest bash`
+
 Test docker build:
 
   `python3 test_installation.py`
