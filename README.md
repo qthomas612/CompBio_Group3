@@ -5,7 +5,7 @@ Tools necessary for the use of this program can be accessed through the use of a
 
 Using the Dockerfile:
 1. `git clone` 
-2. `docker build -t plasmid` .
+2. `docker build -t plasmid .`
 3. The docker container with the databases can be accessed by running:
   `docker run --mount type=bind,source=/home/qthomas/data,target=/data -it plasmid:latest bash`
   
