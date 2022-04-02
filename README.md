@@ -7,7 +7,7 @@ Using the Dockerfile:
 1. `git clone` 
 2. `docker build -t plasmid` .
 3. The docker container with the databases can be accessed by running:
-  `docker run -it plasmid:latest bash`
+  `docker run --mount type=bind,source=/home/USER/CompBio_Group3,target=/data -it plasmid:latest bash`
   
 Test docker build:
 
