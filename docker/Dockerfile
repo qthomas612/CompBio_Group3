@@ -34,3 +34,6 @@ COPY download_db.sh /root
 RUN chmod 755 /root/download_db.sh
 
 RUN /root/download_db.sh
+
+# this main.sh is the script for our program. As the path to main.sh is not specified, it assumes it's added to path
+# ENTRYPOINT ["main.sh"]
