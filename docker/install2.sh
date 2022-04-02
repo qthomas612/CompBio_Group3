@@ -16,7 +16,10 @@ tar -xzf SPAdes-3.15.4-Linux.tar.gz
 rm SPAdes-3.15.4-Linux.tar.gz
 
 # recycler. recycler is built in python 2.7 so create a seperate conda env for it
+conda create -n recycler -y python=2.7
+conda activate recycler
 conda install -c bioconda recycler
+conda activate base
 
 # samtools
 wget https://github.com/samtools/samtools/releases/download/1.15/samtools-1.15.tar.bz2
