@@ -15,3 +15,4 @@ Test docker build:
 
   `python3 test_installation.py`
 
+For ease of using the program, plasmid.py is a python wrapper for `docker run`
