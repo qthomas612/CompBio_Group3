@@ -1,7 +1,11 @@
 import os
 ##Theortical, do not attempt to use before extenstive bug fixing)
-##This should start the docker and mount it. Will be etider later in order to have the mount lead to a drive on any users instead of hard coding
-#docker exec must be used in order to run the commands from the docker container potientally a shell file ie .sh can be used instead
+
+
+
+
+#Trimmomatic
+
 
 #Need to run spades first
 os.system("spades.py -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults")
