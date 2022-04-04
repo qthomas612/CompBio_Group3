@@ -2,6 +2,10 @@ import os
 ##Theortical, do not attempt to use before extenstive bug fixing)
 ##This should start the docker and mount it. Will be etider later in order to have the mount lead to a drive on any users instead of hard coding
 #docker exec must be used in order to run the commands from the docker container potientally a shell file ie .sh can be used instead
+
+#Need to run spades first
+os.system("docker run spades.py -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults")
+
 os.system("docker run --mount type=bind,source=/home/qthomas/data,target=/data -it plasmid:latest bash")
 ##Testing for plasforest
 os.system("docker exec ./test_plasforest.sh")
