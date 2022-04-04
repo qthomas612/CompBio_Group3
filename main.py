@@ -11,4 +11,4 @@ os.system("docker exec python3 PlasForest.py -i data/")
 ##platon database should be set up upon creation of the container
 #!Alert results need to be changed to allow output from docker container to the users output.
 os.system("docker exec platon --db ~/db --output results/ --verbose  x.fasta")
-          
+#Need to address if we are using SPAdes or plasmidSPAdes for input into recycler before wiritng the code to do it
