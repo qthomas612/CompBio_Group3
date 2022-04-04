@@ -4,7 +4,7 @@
 import os
 
 #Some kind of trimmomatic test
-os.system("java -jar trimmomatic-0.35.jar SE -phred33 input.fq.gz output.fq.gz ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36")
+os.system("trimmomatic SE -phred33 ~/data/U54_LUC_01180.nanopore.fastq output.fq.gz ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36")
 
 #SPADES test
 wd = os.getcwd()
