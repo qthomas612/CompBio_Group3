@@ -13,3 +13,5 @@
 
 
 recycler installation failed. testing out new bioconda installation
+
+Error-Need help figuring out how to get a file from the tools results to outside the container to a users file. However we also need to still store the results from the tools inside the docker as well.
