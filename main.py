@@ -4,13 +4,11 @@ import os
 #docker exec must be used in order to run the commands from the docker container potientally a shell file ie .sh can be used instead
 
 #Need to run spades first
-os.system("docker run spades.py -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults")
-
-os.system("docker run --mount type=bind,source=/home/qthomas/data,target=/data -it plasmid:latest bash")
+os.system("spades.py -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults")
 ##Testing for plasforest
-os.system("docker exec ./test_plasforest.sh")
+os.system("./test_plasforest.sh")
 ##using plasforest
-os.system("docker exec python3 PlasForest.py -i /data/U54_LUC_01180.nanopore.fastq")
+os.system("python3 PlasForest.py -i /data/")
 #Using Platon
 ##platon database should be set up upon creation of the container
 #!Alert results need to be changed to allow output from docker container to the users output.
