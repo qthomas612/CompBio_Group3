@@ -21,6 +21,19 @@ rm SPAdes-3.15.4-Linux.tar.gz
 #conda install -c bioconda recycler
 #conda activate base
 
+# recycler. recycler is built in python 2.7 so create a seperate conda env for it
+conda create -n recycler -y python=2.7
+conda activate recycler
+wget https://github.com/Shamir-Lab/Recycler/releases/download/v0.7/Recycler-v0.7.zip
+chmod 755 Recycler-v0.7.zip
+unzip Recycler-v0.7.zip
+rm Recycler-v0.7.zip
+chmod 755 -R ./Recycler-0.7
+cd Recycler-0.7
+python setup.py install --user
+cd /root
+conda activate base
+
 # samtools
 wget https://github.com/samtools/samtools/releases/download/1.15/samtools-1.15.tar.bz2
 chmod 755 samtools-1.15.tar.bz2
@@ -40,7 +53,7 @@ wget https://sourceforge.net/projects/bio-bwa/files/bwa-0.7.17.tar.bz2
 chmod 755 bwa-0.7.17.tar.bz2
 tar -xvf bwa-0.7.17.tar.bz2
 rm bwa-0.7.17.tar.bz2
-chmod 755 -R bwa-0.7.17
+chmod 755 -R ./bwa-0.7.17
 cd bwa-0.7.17
 make
 cd /root
@@ -50,6 +63,7 @@ conda install -c conda-forge -c bioconda -c defaults -y platon
 
 # plasforest
 git clone https://github.com/leaemiliepradier/PlasForest
+chmod 755 -R ./PlasForest
 cd PlasForest
 tar -zxvf plasforest.sav.tar.gz
 rm plasforest.sav.tar.gz
