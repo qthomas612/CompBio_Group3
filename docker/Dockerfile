@@ -19,15 +19,19 @@ RUN apt-get update && apt-get install -y autoconf \
     zip \
     zlib1g-dev
 
-COPY install.sh /root
+COPY install2.sh /root
 
 ENV PATH=/root/miniconda/bin/:/root/SPAdes-3.15.4-Linux/bin/:/root/bwa-0.7.17:$PATH
 
 ENV PLATON_DB=/root/db/
 
-RUN chmod 755 /root/install.sh
+RUN chmod 755 /root/install2.sh
 
-RUN /root/install.sh
+RUN /root/install2.sh
+
+#workaround for activating environments with a docker
+RUN conda create -n recycler -y python=2.7
+RUN conda run -n recycler conda install -c bioconda recycler
 
 COPY download_db.sh /root
 
