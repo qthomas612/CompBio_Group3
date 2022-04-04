@@ -1,2 +1,4 @@
+run sed in PlasForest on check_and_download_database.py
+
 sed 's:input("Do you want to download them? (y/n) "):"y":g' check_and_download_database.py > test.py
 add plasforest dependencies
