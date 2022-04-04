@@ -69,4 +69,11 @@ tar -zxvf plasforest.sav.tar.gz
 rm plasforest.sav.tar.gz
 chmod 755 database_downloader.sh
 
+#BioPython, scikit-learn 0.22.2.post1, Numpy, Pandas, Joblib
+conda install numpy
+conda install pandas
+conda install -c conda-forge joblib
+conda install scikit-learn
+conda install -c conda-forge biopython
+
 source /root/.profile
