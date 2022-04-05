@@ -69,6 +69,7 @@ cd PlasForest
 tar -zxvf plasforest.sav.tar.gz
 rm plasforest.sav.tar.gz
 sed -i 's:input("Do you want to download them? (y/n) "):"y":g' check_and_download_database.py
+sed -i 's:input("Please enter an email address: "):"tkosciuch@luc.edu":g' check_and_download_database.py
 
 #BioPython, scikit-learn 0.22.2.post1, Numpy, Pandas, Joblib
 #conda install numpy
