@@ -62,18 +62,19 @@ cd /root
 conda install -c conda-forge -c bioconda -c defaults -y platon
 
 # plasforest
+conda install -y -c anaconda -c conda-forge biopython scikit-learn numpy pandas joblib
 git clone https://github.com/leaemiliepradier/PlasForest
 chmod 755 -R ./PlasForest
 cd PlasForest
 tar -zxvf plasforest.sav.tar.gz
 rm plasforest.sav.tar.gz
-chmod 755 database_downloader.sh
+sed -i 's:input("Do you want to download them? (y/n) "):"y":g' check_and_download_database.py
 
 #BioPython, scikit-learn 0.22.2.post1, Numpy, Pandas, Joblib
-conda install numpy
-conda install pandas
-conda install -c conda-forge joblib
-conda install scikit-learn
-conda install -c conda-forge biopython
+#conda install numpy
+#conda install pandas
+#conda install -c conda-forge joblib
+#conda install scikit-learn
+#conda install -c conda-forge biopython
 
 source /root/.profile
