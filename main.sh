@@ -16,6 +16,13 @@ do
     esac
 done
 
+#set defaults if options are empty
+${threads:-4}
+${seqtype:-illumina}
+${output:-./output}
+${readtype:-unpaired}
+
+
 #Make sure user input a data file, if not exit script
 if [ -z "$data" ]; then
         echo 'Missing -d' >&2
