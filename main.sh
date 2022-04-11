@@ -16,6 +16,13 @@ do
     esac
 done
 
+#set defaults if options are empty
+${threads:-4}
+${seqtype:-illumina}
+${output:-./output}
+${readtype:-unpaired}
+
+
 #Make sure user input a data file, if not exit script
 if [ -z "$data" ]; then
         echo 'Missing -d' >&2
@@ -28,11 +35,31 @@ then
   java -jar trimmomatic-0.35.jar SE -phred33 -d -o ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 fi
 
-#if user input threads
+#RUN THIS COMMAND WITH USER INPUTS
+#SPADES ASSEMBLY
 spades.py -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults
 
+#SPADES PLASMID PREDICTION
+#double check this command is right
+spades.py --plasmid -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults
+
+#PLASFOREST
 
 
+#PLATON
+platon --db ~/db --output ./spades_test/ --verbose --threads 8 ./SpadesResult/contigs.fasta
+
+
+#RECYCLER
+conda activate recycler
+make_fasta_from_fastg.py -g ./data/SpadesResult/assembly_graph.fastg [-o assembly_graph.nodes.fasta]
+bwa index assembly_graph.nodes.fasta
+bwa mem assembly_graph.nodes.fasta R1.fastq.gz R2.fastq.gz | samtools view -buS - > reads_pe.bam
+samtools view -bF 0x0800 reads_pe.bam > reads_pe_primary.bam
+samtools sort reads_pe_primary.bam reads_pe_primary.sort.bam
+samtools index reads_pe_primary.sort.bam
+
+recycle.py -g ./spades_test/assembly_graph.fastg -k 55 -b reads_pe_primary.sort.bam -i True
 
 
 
