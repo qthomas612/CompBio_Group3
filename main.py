@@ -37,12 +37,12 @@ os.system("spades.py -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults"
 ##Testing for plasforest
 #os.system("./test_plasforest.sh")
 ##using plasforest
-os.system("python3 PlasForest.py -i /data/SpadesResult.contigs.fasta")
+os.system("python3 PlasForest.py -i /data/SpadesResult/contigs.fasta")
 #Using Platon
 ##platon database should be set up upon creation of the container
 #!Alert results need to be changed to allow output from docker container to the users output.
 #os.system("docker exec platon --db ~/db --output results/ --verbose  "+ "args[output]" + "/contigs.fasta")
-os.system("docker exec platon --db ~/db --output results/ --verbose  /data/SpadesResult.contigs.fasta")
+os.system("docker exec platon --db ~/db --output results/ --verbose  /data/SpadesResult/contigs.fasta")
 
                 
                 
