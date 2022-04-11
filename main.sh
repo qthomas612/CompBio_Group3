@@ -35,8 +35,17 @@ then
   java -jar trimmomatic-0.35.jar SE -phred33 -d -o ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 fi
 
-#if user input threads
+#RUN THIS COMMAND WITH USER INPUTS
+#SPADES ASSEMBLY
 spades.py -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults
+
+#SPADES PLASMID PREDICTION
+
+
+#PLASFOREST
+
+
+#PLATON
 
 
 
