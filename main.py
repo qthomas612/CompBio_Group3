@@ -35,7 +35,7 @@ os.system("spades.py -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults"
             #os.system("spades.py -2 [data] -o args[output]")
                    
 ##Testing for plasforest
-os.system("./test_plasforest.sh")
+#os.system("./test_plasforest.sh")
 ##using plasforest
 os.system("python3 PlasForest.py -i /data/SpadesResult.contigs.fasta")
 #Using Platon
@@ -44,3 +44,20 @@ os.system("python3 PlasForest.py -i /data/SpadesResult.contigs.fasta")
 #os.system("docker exec platon --db ~/db --output results/ --verbose  "+ "args[output]" + "/contigs.fasta")
 os.system("docker exec platon --db ~/db --output results/ --verbose  /data/SpadesResult.contigs.fasta")
 
+                
+                
+                
+##Recycler
+os.system("make_fasta_from_fastg.py -g ./data/SpadesResult/assembly_graph.fastg [-o assembly_graph.nodes.fasta]")             
+os.system("bwa index assembly_graph.nodes.fasta")
+os.system("bwa mem assembly_graph.nodes.fasta R1.fastq.gz R2.fastq.gz | samtools view -buS - > reads_pe.bam")                
+os.system("samtools view -bF 0x0800 reads_pe.bam > reads_pe_primary.bam")
+os.system("samtools sort reads_pe_primary.bam reads_pe_primary.sort.bam")
+os.system("samtools index reads_pe_primary.sort.bam")
+                
+os.system("recycle.py -g ./spades_test/assembly_graph.fastg -k 55 -b reads_pe_primary.sort.bam -i True")
+                
+#PLATON
+os.system("platon --db ~/db --output ./spades_test/ --verbose --threads 8 ./SpadesResult.contigs.fasta")                
+                
+                
