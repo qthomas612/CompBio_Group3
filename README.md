@@ -9,10 +9,24 @@ Using the Dockerfile:
 3. The docker container with the databases can be accessed by running:
   `docker run --mount type=bind,source=/home/qthomas/data,target=/data -it plasmid:latest bash`
     - when writing to /data in the docker container, those files will also be written to /home/qthomas/data.
-    - multiple folders can be bound i.e. `docker run --mount type=bind,source=/home/qthomas/data,target=/data --mount type=bind,source=/home/qthomas/results,target=/results -it plasmid:latest bash`
+    - multiple folders can be bound i.e. `docker run --rm --mount type=bind,source=/home/qthomas/data,target=/data --mount type=bind,source=/home/qthomas/results,target=/results -it plasmid:latest bash`
 
 Test docker build:
 
   `python3 test_installation.py`
 
 For ease of using the program, plasmid.py is a python wrapper for `docker run`
+
+## Command line options
+``` 
+python plasmid.py --help
+
+optional arguments:
+  -h, --help       show this help message and exit
+  -t , --threads   Number of CPUs to use in computation. Defaults to half the number of available CPUs
+  -s , --seqtype   Type of sequences. Options are illumina or nanopore. The illumina option works for
+                   all short reads
+  -r , --trim      Trim adapter sequences using trimmomatic. Accpets a string of the adapter to trim
+  -d , --data      input data
+  -o , --output    directory to write results to
+```
