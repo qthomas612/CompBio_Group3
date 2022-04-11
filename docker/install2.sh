@@ -24,6 +24,7 @@ rm SPAdes-3.15.4-Linux.tar.gz
 # recycler. recycler is built in python 2.7 so create a seperate conda env for it
 conda create -n recycler -y python=2.7
 conda activate recycler
+conda install -c anaconda -c defaults -c bioconda -c conda-forge -y numpy networkx pysam nose
 wget https://github.com/Shamir-Lab/Recycler/releases/download/v0.7/Recycler-v0.7.zip
 chmod 755 Recycler-v0.7.zip
 unzip Recycler-v0.7.zip
