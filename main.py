@@ -33,7 +33,7 @@ os.system("spades.py -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults"
             #os.system("spades.py -1 [data] -o args[output]")
     #if args[readtype] == "reverse paired-end"
             #os.system("spades.py -2 [data] -o args[output]")
-                   
+#Run Plasmidspades                   
 ##Testing for plasforest
 #os.system("./test_plasforest.sh")
 ##using plasforest
