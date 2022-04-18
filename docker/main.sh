@@ -9,7 +9,6 @@ do
         s) seqtype=${OPTARG};;
         r) trim=${OPTARG};;
         d) data=${OPTARG};;
-        o) output=${OPTARG};;
         p) readtype=${OPTARG};;
        \?) echo "Error: Invalid option"
            exit;;
@@ -23,12 +22,12 @@ done
 #${output:-./output}
 #${readtype:-unpaired}
 
-
+## TK: will check this in plasmid.py
 #Make sure user input a data file, if not exit script
-if [ -z "$data" ]; then
-        echo 'Missing -d' >&2
-        exit 1
-fi
+#if [ -z "$data" ]; then
+#        echo 'Missing -d' >&2
+#        exit 1
+#fi
 
 #If the user input a trim option then call trimmomatic
 if $trim
@@ -38,11 +37,11 @@ fi
 
 #RUN THIS COMMAND WITH USER INPUTS
 #SPADES ASSEMBLY
-spades.py -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults
+spades.py -s data/$data -o /output/SpadesResults
 
 #SPADES PLASMID PREDICTION
 #double check this command is right || Command is right and runs without errors
-spades.py --plasmid -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults
+spades.py --plasmid -s data/$data -o data/SpadesResults
 
 #PLASFOREST
 
