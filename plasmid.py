@@ -8,6 +8,7 @@ ap.add_argument('-s','--seqtype', type = str, default = "illumina", help = 'Type
 ap.add_argument('-r','--trim', type = str, default = False, help = 'Trim adapter sequences using trimmomatic. Accpets a string of the adapter to trim', metavar = '')
 ap.add_argument('-d','--data', type = str, required = True,  help = 'input data', metavar = '')
 ap.add_argument('-o','--output', type = str, default = "./output", help = 'directory to write results to', metavar = '')
+ap.add_argument('-l','--readtype', type = str, default = , help = "Type of reads. Options are 'interlaced forward', 'reverse paired-end', or 'forward paired-end'", metavar = '')
 
 args = vars(ap.parse_args())
 
