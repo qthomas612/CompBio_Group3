@@ -19,9 +19,9 @@ data =  os.path.realpath(args['data'])
 data_target = os.path.basename(args['data'])
 output = os.path.realpath(args['output'])
 
-docker_str = "docker run --mount type=bind,source="+data+",target=/data/"+data_target+" --mount type=bind,source="+output+",target=/output plasmid:latest --threads "+str(args['threads'])+" --seqtype "+args["seqtype"]+" --data "+args['data']+" --output "+output
+docker_str = "docker run --mount type=bind,source="+data+",target=/data/"+data_target+" --mount type=bind,source="+output+",target=/output plasmid:latest -t "+str(args['threads'])+" -s "+args["seqtype"]+" -d "+args['data']+" -o "+output
 
 if args['trim']:
-    docker_str += " --trim "+args['trim']
+    docker_str += " -r "+args['trim']
 
 print(docker_str)
