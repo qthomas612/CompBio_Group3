@@ -40,7 +40,7 @@ fi
 spades.py -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults
 
 #SPADES PLASMID PREDICTION
-#double check this command is right
+#double check this command is right || Command is right and runs without errors
 spades.py --plasmid -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults
 
 #PLASFOREST
