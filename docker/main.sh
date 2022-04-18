@@ -35,6 +35,10 @@ then
   java -jar trimmomatic-0.35.jar SE -phred33 -d /data/$data  -o ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 fi
 
+#make output directory of results
+mkdir output output/SpadesResults output/recycler output/plasforest output/platon
+
+
 #RUN THIS COMMAND WITH USER INPUTS
 #SPADES ASSEMBLY
 spades.py -s /data/$data -o /output/SpadesResults
