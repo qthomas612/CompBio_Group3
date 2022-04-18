@@ -17,9 +17,20 @@ do
 done
 
 #set defaults if options are empty
-${threads:-4}
-${seqtype:-illumina}
-${output:-./output}
-${readtype:-unpaired}
+#${threads:-4}
+#${seqtype:-illumina}
+#${output:-./output}
+#${readtype:-unpaired}
 
 echo $threads $seqtype $trim $data $output $readtype
+
+if [ -z "$data" ]; then
+        echo 'Missing -d' >&2
+        exit 1
+fi
+
+#If the user input a trim option then call trimmomatic
+if $trim
+then
+  echo $trim
+fi

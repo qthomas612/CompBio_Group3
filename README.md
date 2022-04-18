@@ -29,8 +29,5 @@ optional arguments:
   -r , --trim      Trim adapter sequences using trimmomatic. Accpets a string of the adapter to trim
   -d , --data      input data
   -o , --output    directory to write results to
-```
-## Main Shell File additonal option
-```
-  -1,--readtype   Type of reads. Options are interlaced forward and reverse paired-end reads, forward paired-end reads, file with reverse paired-end reads,file with unpaired reads
+  -l , --readtype   Type of reads. Options are 'interlaced forward', 'reverse paired-end', or 'forward paired-end'
 ```
