@@ -16,11 +16,12 @@ do
     esac
 done
 
+## TK: couldn't get the defaults to work here and defaults are handled in plasmid.py
 #set defaults if options are empty
-${threads:-4}
-${seqtype:-illumina}
-${output:-./output}
-${readtype:-unpaired}
+#${threads:-4}
+#${seqtype:-illumina}
+#${output:-./output}
+#${readtype:-unpaired}
 
 
 #Make sure user input a data file, if not exit script
