@@ -32,27 +32,27 @@ done
 #If the user input a trim option then call trimmomatic
 if $trim
 then
-  java -jar trimmomatic-0.35.jar SE -phred33 -d -o ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+  java -jar trimmomatic-0.35.jar SE -phred33 -d /data/$data  -o ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 fi
 
 #RUN THIS COMMAND WITH USER INPUTS
 #SPADES ASSEMBLY
-spades.py -s data/$data -o /output/SpadesResults
+spades.py -s /data/$data -o /output/SpadesResults
 
 #SPADES PLASMID PREDICTION
 #double check this command is right || Command is right and runs without errors
-spades.py --plasmid -s data/$data -o data/SpadesResults
+spades.py --plasmid -s /data/$data -o data/SpadesResults
 
 #PLASFOREST
 
 
 #PLATON
-platon --db ~/db --output ./spades_test/ --verbose --threads 8 ./SpadesResult/contigs.fasta
+platon --db ~/db --output ./spades_test/ --verbose --threads $threads /output/SpadesResult/contigs.fasta
 
 
 #RECYCLER
 conda activate recycler
-make_fasta_from_fastg.py -g ./data/SpadesResults/assembly_graph.fastg [-o assembly_graph.nodes.fasta]
+make_fasta_from_fastg.py -g /output/SpadesResults/assembly_graph.fastg [-o assembly_graph.nodes.fasta]
 bwa index assembly_graph.nodes.fasta
 bwa mem assembly_graph.nodes.fasta R1.fastq.gz R2.fastq.gz | samtools view -buS - > reads_pe.bam
 samtools view -bF 0x0800 reads_pe.bam > reads_pe_primary.bam
