@@ -19,14 +19,4 @@ Error-Need help figuring out how to get a file from the tools results to outside
 Cannot figure out how to access some of the programs from within the container ie (recycle.py: not found) and (can't open file '//PlasForest.py': [Errno 2] No such file or directory)
 Solved
 
-4/10-Errors from running spades with nanopore test data 01180 === 
-Error correction and assembling warnings:
- * 0:02:10.668   288M / 3159M WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 3
- * 0:02:10.669   288M / 3159M WARN    General                 (kmer_coverage_model.cpp   : 366)   Failed to determine erroneous kmer threshold. Threshold set to: 3
- * 0:02:31.594   209M / 3602M WARN    General                 (kmer_coverage_model.cpp   : 218)   Too many erroneous kmers, the estimates might be unreliable
- * 0:02:34.547   209M / 3602M WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 2
- * 0:02:34.547   209M / 3602M WARN    General                 (kmer_coverage_model.cpp   : 366)   Failed to determine erroneous kmer threshold. Threshold set to: 2
- * 0:03:35.181   159M / 3826M WARN    General                 (kmer_coverage_model.cpp   : 366)   Failed to determine erroneous kmer threshold. Threshold set to: 28
- * 0:05:24.499  3340M / 3826M WARN    General                 (simplification.cpp        : 504)   The determined erroneous connection coverage threshold may be determined improperly
- * 0:01:00.085   110M / 4074M WARN    General                 (kmer_coverage_model.cpp   : 366)   Failed to determine erroneous kmer threshold. Threshold set to: 22
 
