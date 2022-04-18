@@ -29,15 +29,13 @@ RUN chmod 755 /root/install2.sh
 
 RUN /root/install2.sh
 
-#workaround for activating environments with a docker
-#RUN conda create -n recycler -y python=2.7
-#RUN conda run -n recycler conda install -c bioconda recycler
-
 COPY download_db.sh /root
+
+COPY main.sh /usr/local/bin
 
 RUN chmod 755 /root/download_db.sh
 
 RUN /root/download_db.sh
 
 # this main.sh is the script for our program. As the path to main.sh is not specified, it assumes it's added to path
-# ENTRYPOINT ["main.sh"]
+ENTRYPOINT ["main.sh"]
