@@ -38,11 +38,11 @@ fi
 
 #RUN THIS COMMAND WITH USER INPUTS
 #SPADES ASSEMBLY
-spades.py -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults
+spades.py -s $data -o data/SpadesResults
 
 #SPADES PLASMID PREDICTION
 #double check this command is right || Command is right and runs without errors
-spades.py --plasmid -s data/U54_LUC_01180.nanopore.fastq -o data/SpadesResults
+spades.py --plasmid -s $data -o data/Spades_P_Results
 
 #PLASFOREST
 
@@ -53,7 +53,7 @@ platon --db ~/db --output ./spades_test/ --verbose --threads 8 ./SpadesResult/co
 
 #RECYCLER
 conda activate recycler
-make_fasta_from_fastg.py -g ./data/SpadesResult/assembly_graph.fastg [-o assembly_graph.nodes.fasta]
+make_fasta_from_fastg.py -g ./data/SpadesResults/assembly_graph.fastg [-o assembly_graph.nodes.fasta]
 bwa index assembly_graph.nodes.fasta
 bwa mem assembly_graph.nodes.fasta R1.fastq.gz R2.fastq.gz | samtools view -buS - > reads_pe.bam
 samtools view -bF 0x0800 reads_pe.bam > reads_pe_primary.bam
