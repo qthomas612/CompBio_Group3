@@ -52,7 +52,7 @@ platon --db ~/db --output ./spades_test/ --verbose --threads $threads /output/Sp
 
 #RECYCLER
 conda activate recycler
-make_fasta_from_fastg.py -g /output/SpadesResults/assembly_graph.fastg [-o /output/recycler/assembly_graph.nodes.fasta]
+make_fasta_from_fastg.py -g /output/SpadesResults/assembly_graph.fastg -o /output/recycler/assembly_graph.nodes.fasta
 bwa index /output/recycler/assembly_graph.nodes.fasta
 bwa mem /output/recycler/assembly_graph.nodes.fasta /output/recycler/R1.fastq.gz /output/recycler/R2.fastq.gz | samtools view -buS - > /output/recycler/reads_pe.bam
 samtools view -bF 0x0800 /output/recycler/reads_pe.bam > /output/recycler/reads_pe_primary.bam
