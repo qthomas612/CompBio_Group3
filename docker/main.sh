@@ -48,7 +48,7 @@ spades.py -s /data/$data -o /output/SpadesResults
 spades.py --plasmid -s /data/$data -o data/SpadesResults
 
 #PLASFOREST
-python3 PlasForest.py -i /data/SpadesResult/contigs.fasta
+PlasForest.py -i /data/SpadesResult/contigs.fasta
 
 #PLATON
 platon --db ~/db --output ./spades_test/ --verbose --threads $threads /output/SpadesResult/contigs.fasta
