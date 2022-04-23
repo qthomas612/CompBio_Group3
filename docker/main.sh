@@ -48,6 +48,9 @@ spades.py -s /data/$data -o /output/SpadesResults
 spades.py --plasmid -s /data/$data -o data/SpadesResults
 
 #PLASFOREST
+#plasforest requires plasforest.sav to be in the same wirking directory so copy to cwd
+cp ~/PlasForest/plasforest.sav ./
+#run plasForest
 PlasForest.py -i /data/SpadesResult/contigs.fasta
 
 #PLATON
