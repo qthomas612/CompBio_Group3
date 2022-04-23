@@ -67,7 +67,6 @@ conda install -y -c anaconda -c conda-forge biopython scikit-learn numpy pandas 
 git clone https://github.com/leaemiliepradier/PlasForest
 chmod 755 -R ./PlasForest
 cd PlasForest
-export PATH="/root/PlasForest:$PATH"
 tar -zxvf plasforest.sav.tar.gz
 rm plasforest.sav.tar.gz
 sed -i 's|input("Do you want to download them? (y/n) ")|"y"|g' check_and_download_database.py
