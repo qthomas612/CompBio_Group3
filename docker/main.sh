@@ -36,28 +36,28 @@ then
 fi
 
 #make output directory of results
-mkdir output output/SpadesResults output/recycler output/plasforest output/platon
+mkdir output output/Results output/results/recycler output/results/plasforest output/results/platon output/results/SPAdes output/results/plasmidSPAdes
 
 
 #RUN THIS COMMAND WITH USER INPUTS
 #SPADES ASSEMBLY
-spades.py -s /data/$data -o /output/SpadesResults
+spades.py -s /data/$data -o /output/Results/SPAdes
 
 #SPADES PLASMID PREDICTION
 #double check this command is right || Command is right and runs without errors
-spades.py --plasmid -s /data/$data -o data/SpadesResults
+spades.py --plasmid -s /data/$data -o data/Results/plasmidSPAdes
 
 #PLASFOREST
 #plasforest app has all the paths to needed files hardcoded in their main file so redirect to PlasForest directory and return after using it.
 cd ~/PlasForest/
 #run plasForest
-PlasForest.py -i ../../data/SpadesResults/contigs.fasta  -o ../../data/SpadesResults/PlasforestResults.csv
+PlasForest.py -i ../../data/Results/SPAdes/contigs.fasta  -o ../../data/Results/plasforest/plasforestResults.csv
 
 #return to previous directory
 cd ../../
 
 #PLATON
-platon --db ~/db --output ./spades_test/ --verbose --threads $threads /output/SpadesResult/contigs.fasta
+platon --db ~/db --output output/Results/platon/ --verbose --threads $threads /output/SpadesResult/contigs.fasta
 
 
 #RECYCLER
