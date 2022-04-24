@@ -71,5 +71,6 @@ samtools index /output/recycler/reads_pe_primary.sort.bam
 
 recycle.py -g /output/recycler/assembly_graph.fastg -k 55 -b /output/recycler/reads_pe_primary.sort.bam -i True -o /output/recycler/
 # need to figure out what spades used for k value
+#SPAdes utilizes multisized de Bruijn graph which allows employing different values of k. That is what the K<##> in resutls related to, so we have no set k-value
 
 
