@@ -51,7 +51,7 @@ spades.py --plasmid -s /data/$data -o data/SpadesResults
 #plasforest app has all the paths to needed files hardcoded in their main file so redirect to PlasForest directory and return after using it.
 cd ~/PlasForest/
 #run plasForest
-PlasForest.py -i ../../data/SpadesResult/contigs.fasta
+PlasForest.py -i ../../data/SpadesResults/contigs.fasta  -o ../../data/SpadesResults/PlasforestResults.csv
 
 #return to previous directory
 cd ../../
