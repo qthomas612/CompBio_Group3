@@ -59,6 +59,9 @@ samtools view -bF 0x0800 /output/recycler/reads_pe.bam > /output/recycler/reads_
 samtools sort /output/recycler/reads_pe_primary.bam /output/recycler/reads_pe_primary.sort.bam
 samtools index /output/recycler/reads_pe_primary.sort.bam
 
+# find largest kmer used by spades
+
+
 recycle.py -g /output/recycler/assembly_graph.fastg -k 55 -b /output/recycler/reads_pe_primary.sort.bam -i True -o /output/recycler/
 # need to figure out what spades used for k value
 

@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y autoconf \
 
 COPY install.sh /root
 
-ENV PATH=/root/miniconda/bin/:/root/Recycler-0.7/bin/:/root/samtools-1.15/:/root/PlasForest:/root/SPAdes-3.15.4-Linux/bin/:/root/bwa-0.7.17/:$PATH
+ENV PATH=/root/Recycler-0.7/build/lib/:/root/miniconda/bin/:/root/Recycler-0.7/bin/:/root/samtools-1.15/:/root/PlasForest:/root/SPAdes-3.15.4-Linux/bin/:/root/bwa-0.7.17/:$PATH
 
 ENV PLATON_DB=/root/db/
 
@@ -40,4 +40,4 @@ RUN chmod 755 /usr/local/bin/main.sh
 RUN /root/download_db.sh
 
 # this main.sh is the script for our program. As the path to main.sh is not specified, it assumes it's added to path
-ENTRYPOINT ["main.sh"]
+#ENTRYPOINT ["main.sh"]
