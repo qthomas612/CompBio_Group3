@@ -36,7 +36,7 @@ then
 fi
 
 #make output directory of results
-mkdir output output/Results output/results/recycler output/results/plasforest output/results/platon output/results/SPAdes output/results/plasmidSPAdes
+mkdir output output/Results output/Results/recycler output/Results/plasforest output/Results/platon output/Results/SPAdes output/Results/plasmidSPAdes
 
 
 #RUN THIS COMMAND WITH USER INPUTS
