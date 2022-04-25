@@ -1,0 +1,8 @@
+1. spades K value (if recycler) 
+2. remove trimmomatic 
+3. test plasmid script 
+4. double check paths in main.sh
+5.add output flag
+6.find benchmark data
+7.check runtime info (Saturday)
+
