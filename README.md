@@ -1,7 +1,7 @@
 # CompBio_Group3
 
 This program uses several plasmid identification tools to detect plasmid sequences from fastq files. Tools used include: spades, recycler, platon and plasforest.
-Tools necessary for the use of this program can be accessed through the use of a dockerfile.
+Tools necessary for the use of this program can be accessed through the use of a dockerfile. All quality control of sequence reads should be done before using this pipeline.
 
 Using the Dockerfile:
 1. `git clone` 
