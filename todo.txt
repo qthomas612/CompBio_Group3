@@ -5,4 +5,4 @@
 5.add output flag
 6.find benchmark data
 7.check runtime info (Saturday)
-
+8.comb through fasta output and develop the FINAL csv file.
