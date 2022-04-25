@@ -29,12 +29,6 @@ done
 #        exit 1
 #fi
 
-#If the user input a trim option then call trimmomatic
-if $trim
-then
-  java -jar trimmomatic-0.35.jar SE -phred33 -d /data/$data  -o ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
-fi
-
 #make output directory of results
 mkdir output output/Results output/Results/recycler output/Results/plasforest output/Results/platon output/Results/SPAdes output/Results/plasmidSPAdes
 
