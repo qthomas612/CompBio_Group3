@@ -5,7 +5,6 @@ import os, argparse, multiprocessing
 ap = argparse.ArgumentParser()
 ap.add_argument('-t','--threads', type = int, default = 4, help = 'Number of CPUs to use in computation. Defaults to half the number of available CPUs', metavar = '')
 ap.add_argument('-s','--seqtype', type = str, default = "illumina", help = 'Type of sequences. Options are illumina or nanopore. The illumina option works for all short reads', metavar = '')
-ap.add_argument('-r','--trim', type = str, default = False, help = 'Trim adapter sequences using trimmomatic. Accpets a string of the adapter to trim', metavar = '')
 ap.add_argument('-d','--data', type = str, required = True,  help = 'input data', metavar = '')
 ap.add_argument('-o','--output', type = str, default = "./output", help = 'directory to write results to', metavar = '')
 ap.add_argument('-l','--readtype', type = str, default = False, help = "Type of reads. Options are 'interlaced forward', 'reverse paired-end', or 'forward paired-end'", metavar = '')
