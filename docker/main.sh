@@ -57,7 +57,7 @@ PlasForest.py -i ../../data/Results/SPAdes/contigs.fasta  -o ../../data/Results/
 cd ../../
 
 #PLATON
-platon --db ~/db --output output/Results/platon/ --verbose --threads $threads /output/SpadesResult/contigs.fasta
+platon --db ~/db --output output/Results/platon/ --verbose --threads $threads /output/Results/SPAdes/contigs.fasta
 
 
 #RECYCLER
