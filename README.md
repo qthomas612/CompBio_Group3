@@ -26,7 +26,6 @@ optional arguments:
   -t , --threads   Number of CPUs to use in computation. Defaults to half the number of available CPUs
   -s , --seqtype   Type of sequences. Options are illumina or nanopore. The illumina option works for
                    all short reads
-  -r , --trim      Trim adapter sequences using trimmomatic. Accpets a string of the adapter to trim
   -d , --data      input data
   -o , --output    directory to write results to
   -l , --readtype   Type of reads. Options are 'interlaced forward', 'reverse paired-end', or 'forward paired-end'
