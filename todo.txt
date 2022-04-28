@@ -10,3 +10,7 @@
 6.find benchmark data
 7.check runtime info (Saturday)
 8.comb through fasta output and develop the FINAL csv file.
+    - plasforest has a CSV with chromosome vs plasmid indicated
+    - platon has chromosome and plasmid fasta files with the same names as in plasforest's CSV
+    - plasmidspades has different results. Will run a local blast to match plasmidSPAdes plasmids to the SPAdes contigs
+        - https://www.tutorialspoint.com/biopython/biopython_overview_of_blast.htm
