@@ -12,19 +12,19 @@ source /root/miniconda/etc/profile.d/conda.sh
 rm miniconda.sh
 
 # recycler. recycler is built in python 2.7 so create a seperate conda env for it
-conda create -n recycler -y python=2.7
-conda activate recycler
-conda install -y numpy networkx nose
-conda install -c bioconda -y pysam
-wget -nv https://github.com/Shamir-Lab/Recycler/releases/download/v0.7/Recycler-v0.7.zip
-chmod 755 Recycler-v0.7.zip
-unzip Recycler-v0.7.zip
-rm Recycler-v0.7.zip
-chmod 755 -R ./Recycler-0.7
-cd Recycler-0.7
-python setup.py install --user
-cd /root
-conda activate base
+#conda create -n recycler -y python=2.7
+#conda activate recycler
+#conda install -y numpy networkx nose
+#conda install -c bioconda -y pysam
+#wget -nv https://github.com/Shamir-Lab/Recycler/releases/download/v0.7/Recycler-v0.7.zip
+#chmod 755 Recycler-v0.7.zip
+#unzip Recycler-v0.7.zip
+#rm Recycler-v0.7.zip
+#chmod 755 -R ./Recycler-0.7
+#cd Recycler-0.7
+#python setup.py install --user
+#cd /root
+#conda activate base
 
 # spades 3.15.4
 wget -nv https://cab.spbu.ru/files/release3.15.4/SPAdes-3.15.4-Linux.tar.gz
@@ -43,17 +43,17 @@ make install
 cd /root
 
 # Trimmomatic
-conda install -c bioconda trimmomatic
+#conda install -c bioconda trimmomatic
 
 # bwa
-wget -nv https://sourceforge.net/projects/bio-bwa/files/bwa-0.7.17.tar.bz2
-chmod 755 bwa-0.7.17.tar.bz2
-tar -xvf bwa-0.7.17.tar.bz2
-rm bwa-0.7.17.tar.bz2
-chmod 755 -R ./bwa-0.7.17
-cd bwa-0.7.17
-make
-cd /root
+#wget -nv https://sourceforge.net/projects/bio-bwa/files/bwa-0.7.17.tar.bz2
+#chmod 755 bwa-0.7.17.tar.bz2
+#tar -xvf bwa-0.7.17.tar.bz2
+#rm bwa-0.7.17.tar.bz2
+#chmod 755 -R ./bwa-0.7.17
+#cd bwa-0.7.17
+#make
+#cd /root
 
 # platon
 conda install -c conda-forge -c bioconda -c defaults -y platon
