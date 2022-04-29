@@ -14,3 +14,5 @@
     - platon has chromosome and plasmid fasta files with the same names as in plasforest's CSV
     - plasmidspades has different results. Will run a local blast to match plasmidSPAdes plasmids to the SPAdes contigs
         - https://www.tutorialspoint.com/biopython/biopython_overview_of_blast.htm
+9.we need to indicate whether our files are paired end or not (for spades and recycler)
+    -throw in an if/else statement (if flag is p vs s or something of the sort.)
