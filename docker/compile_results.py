@@ -15,33 +15,62 @@ with open("/output/SPAdes/contigs.fasta") as handle:
         contigs.append(seq.id)
 
 # for testing
-with open("/home/tkosciuch/Results01180/SPAdes/contigs.fasta") as handle:
-    record = list(SeqIO.parse(handle, "fasta"))
-    for seq in record:
-        contigs.append(seq.id)
+# with open("/home/tkosciuch/Results01180/SPAdes/contigs.fasta") as handle:
+#     record = list(SeqIO.parse(handle, "fasta"))
+#     for seq in record:
+#         contigs.append(seq.id)
 
 #### platon
+# "/home/tkosciuch/Results01180/platon/contigs.plasmid.fasta"
 platon_plasmid = []
 platon_chromosome = []
 
-with open("/home/tkosciuch/Results01180/platon/contigs.plasmid.fasta") as handle:
+with open("/output/platon/contigs.plasmid.fasta") as handle:
     record = list(SeqIO.parse(handle, "fasta"))
     for seq in record:
         platon_plasmid.append(seq.id)
 
-with open("/home/tkosciuch/Results01180/platon/contigs.chromosome.fasta") as handle:
+with open("/output/platon/contigs.chromosome.fasta") as handle:
     record = list(SeqIO.parse(handle, "fasta"))
     for seq in record:
         platon_chromosome.append(seq.id)
 
 #### plasforest
+plasforest_plasmid = []
+plasforest_chromosome = []
 
-with open("/home/tkosciuch/Results01180/plasforest/plasforestResults.csv") as handle:
+with open("/output/plasforest/plasforestResults.csv") as handle:
+    input = handle.readlines()
+    for contig in input:
+        temp_contig = contig.split(",")
+        if temp_contig[1].strip() == "Plasmid":
+            plasforest_plasmid.append(temp_contig[0])
+        elif temp_contig[1].strip() == "Chromosome":
+            plasforest_chromosome.append(temp_contig[0])
+
+
+#### combine platon and plasforest results
+result = [["SPAdes contig", "platon","plasforest"]]
+for contig in contigs:
+    temp_result = [contig]
+    if contig in platon_plasmid:
+        temp_result.append("plasmid")
+    elif contig in platon_chromosome:
+        temp_result.append("chromosome")
+    else:
+        temp_result.append("not evaluated")
     
+    if contig in plasforest_plasmid:
+        temp_result.append("plasmid")
+    elif contig in plasforest_chromosome:
+        temp_result.append("chromosome")
+    else:
+        temp_result.append("not evaluated")
+    result.append(temp_result)
 
+numpy.savetxt("/output/plasforest_platon.csv", result, delimiter =", ", fmt ='% s')
 
-
-#### plasmidSPAdes
+#### plasmidSPAdes, perform BLASTN on SPAdes contig.fasta
 
 # create a blast database of SPAdes contigs
 os.system("makeblastdb -in /output/Results/SPAdes/contigs.fasta -parse_seqids -dbtype nucl -out /output/Results/blast_db/SPAdes")
@@ -61,20 +90,3 @@ for record in NCBIXML.parse(open("/output/plasmidSPAdes/plasmidSPAdes_blast.xml"
 
 numpy.savetxt("/output/plasmidSPAdes_closest_conitg.csv", plasSPAdes_results, delimiter =", ", fmt ='% s')
 
-
-#### combine platon and plasforest results
-result = [["SPAdes contig", "platon","plasforest"]]
-for contig in contigs:
-    temp_result = []
-    if contig in platon_plasmid:
-        temp_result.append("plasmid")
-    else if contig in platon_chromosome:
-        temp_result.append("chromosome")
-    else:
-        temp_result.append("not evaluated")
-    
-    if contig in 
-
-    
-    
-    result.append([contig,temp_result])
