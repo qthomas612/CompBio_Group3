@@ -1,22 +1,6 @@
-/bin/sh: 1: ENV: not found
-##Solved by making sure its not running in consle by checking for extra && \
-/bin/sh: 1: zip: not found
-##Solved with
-  RUN  apt-get update \
-  && apt-get install -y zip
-  
-/bin/sh: 1: cd: can't cd to Recycler-v0.7
-##Need help fixing this
+PlasForest error:
 
+/root/miniconda/lib/python3.9/site-packages/sklearn/base.py:329: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.22.2.post1 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
 
-## Tristan - docker folder dockerfile
-
-
-recycler installation failed. testing out new bioconda installation
-
-Error-Need help figuring out how to get a file from the tools results to outside the container to a users file. However we also need to still store the results from the tools inside the docker as well.
-
-Cannot figure out how to access some of the programs from within the container ie (recycle.py: not found) and (can't open file '//PlasForest.py': [Errno 2] No such file or directory)
-Solved
-
-
+might need to install scikit-learn v0.22.2.post1 instead of the most recent

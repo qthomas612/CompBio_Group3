@@ -59,7 +59,7 @@ cd /root
 conda install -c conda-forge -c bioconda -c defaults -y platon
 
 # plasforest
-conda install -y -c anaconda -c conda-forge biopython scikit-learn numpy pandas joblib
+conda install -y -c anaconda -c conda-forge biopython scikit-learn==0.22.2.post1 numpy pandas joblib
 git clone https://github.com/leaemiliepradier/PlasForest
 chmod 755 -R ./PlasForest
 cd PlasForest

@@ -30,3 +30,5 @@ optional arguments:
   -o , --output    directory to write results to
   -l , --readtype   Type of reads. Options are 'interlaced forward', 'reverse paired-end', or 'forward paired-end'
 ```
+
+```docker logs <container id>``` will show the commands running in the container and any error messages

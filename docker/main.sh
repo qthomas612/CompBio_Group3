@@ -21,9 +21,9 @@ mkdir /output/Results /output/Results/blast_db /output/Results/recycler /output/
 #SPADES ASSEMBLY
 if [$readtype = "12"]
 then
-    spades.py --12 /data/$data -o /output/Results/SPAdes & SPADES=$!
+    spades.py -t $threads --12 /data/$data -o /output/Results/SPAdes
 else
-    spades.py -$readtype /data/$data -o /output/Results/SPAdes & SPADES=$!
+    spades.py -t $threads -$readtype /data/$data -o /output/Results/SPAdes
 fi
 
 #SPADES PLASMID PREDICTION
@@ -32,25 +32,23 @@ fi
 
 if [$readtype = 12]
 then
-    spades.py --plasmid --12 /data/$data -o /output/Results/plasmidSPAdes &
+    spades.py -t $threads --plasmid --12 /data/$data -o /output/Results/plasmidSPAdes
 else
-    spades.py --plasmid -$readtype /data/$data -o /output/Results/plasmidSPAdes &
+    spades.py -t $threads --plasmid -$readtype /data/$data -o /output/Results/plasmidSPAdes
 fi
-
-wait $SPADES
 
 #PLASFOREST
 #plasforest app has all the paths to needed files hardcoded in their main file so redirect to PlasForest directory and return after using it.
 #run plasForest
-PlasForest.py -i /output/Results/SPAdes/contigs.fasta  -o /output/Results/plasforest/plasforestResults.csv &
+cd /root/PlasForest
+PlasForest.py --threads $threads -i /output/Results/SPAdes/contigs.fasta  -o /output/Results/plasforest/plasforestResults.csv
+cd
 
 #return to previous directory
 #cd ../../ # TK: I don't think we need to move around directories as all the tools should be in $PATH
 
 #PLATON
-platon --db ~/db --output /output/Results/platon/ --verbose --threads $threads /output/Results/SPAdes/contigs.fasta &
-
-wait
+platon --threads $threads --db ~/db --output /output/Results/platon/ /output/Results/SPAdes/contigs.fasta
 
 # format results
 /root/compile_results.py

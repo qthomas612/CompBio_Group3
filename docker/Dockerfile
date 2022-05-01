@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:bionic
 
 SHELL ["/bin/bash", "-c"]
 
@@ -38,6 +38,10 @@ COPY main.sh /usr/local/bin
 RUN chmod 755 /usr/local/bin/main.sh
 
 RUN /root/download_db.sh
+
+COPY compile_results.py /root/compile_results.py
+
+RUN chmod 755 /root/compile_results.py
 
 # this main.sh is the script for our program. As the path to main.sh is not specified, it assumes it's added to path
 #ENTRYPOINT ["main.sh"]
