@@ -3,7 +3,7 @@
 cd /root
 
 # miniconda
-wget -nv https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ./miniconda.sh
+wget -nv https://repo.anaconda.com/miniconda/Miniconda3-py37_4.11.0-Linux-x86_64.sh -O ./miniconda.sh
 chmod 755 miniconda.sh
 ./miniconda.sh -b -p /root/miniconda
 conda init bash
