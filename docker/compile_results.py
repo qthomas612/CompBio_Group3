@@ -73,9 +73,9 @@ numpy.savetxt("/output/plasforest_platon.csv", result, delimiter =", ", fmt ='% 
 #### plasmidSPAdes, perform BLASTN on SPAdes contig.fasta
 
 # create a blast database of SPAdes contigs
-os.system("makeblastdb -in /output/Results/SPAdes/contigs.fasta -parse_seqids -dbtype nucl -out /output/Results/blast_db/SPAdes")
+os.system("makeblastdb -in /output/SPAdes/contigs.fasta -parse_seqids -dbtype nucl -out /output/blast_db/SPAdes")
 
-blastn_cline = NcbiblastnCommandline(query = "/output/Results/plasmidSPAdes/contigs.fasta", db = "/output/Results/blast_db/SPAdes", outfmt = 5, out = "/output/plasmidSPAdes/plasmidSPAdes_blast.xml") 
+blastn_cline = NcbiblastnCommandline(query = "/output/plasmidSPAdes/contigs.fasta", db = "/output/blast_db/SPAdes", outfmt = 5, out = "/output/plasmidSPAdes/plasmidSPAdes_blast.xml") 
 
 stdout, stderr = blastn_cline()
 
