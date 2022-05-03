@@ -22,6 +22,9 @@ mkdir /output/Results /output/Results/blast_db /output/Results/recycler /output/
 if [$readtype = "12"]
 then
     spades.py -t $threads --12 /data/$data -o /output/Results/SPAdes
+elif [$readtype = "1+2"]
+then
+    spades.py -t $threads -1 /data/$1 -1 /data/$2 -o /output/Results/SPAdes
 else
     spades.py -t $threads -$readtype /data/$data -o /output/Results/SPAdes
 fi
@@ -33,6 +36,9 @@ fi
 if [$readtype = 12]
 then
     spades.py -t $threads --plasmid --12 /data/$data -o /output/Results/plasmidSPAdes
+elif [$readtype = "1+2"]
+then
+    spades.py -t $threads --plasmid -1 /data/$1 -1 /data/$2 -o /output/Results/plasmidSPAdes
 else
     spades.py -t $threads --plasmid -$readtype /data/$data -o /output/Results/plasmidSPAdes
 fi
