@@ -24,11 +24,11 @@ python plasmid.py --help
 optional arguments:
   -h, --help       show this help message and exit
   -t , --threads   Number of CPUs to use in computation. Defaults to half the number of available CPUs
-  -s , --seqtype   Type of sequences. Options are illumina or nanopore. The illumina option works for
-                   all short reads
-  -d , --data      input data
+  -f , --file      path to input data
   -o , --output    directory to write results to
-  -l , --readtype   Type of reads. Options are 'interlaced forward', 'reverse paired-end', or 'forward paired-end'
+  -r , --readtype   Type of reads. Options are 'interlaced forward', 'reverse paired-end', or 'forward paired-end'
+  -1 , --forward    Path to forward read fastq file. Used only if the readtype flag is 1+2.
+  -2 , --reverse    Path to reverse read fastq file. Used only if the readtype flag is 1+2.
 ```
 
 ```docker logs <container id>``` will show the commands running in the container and any error messages
