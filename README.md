@@ -14,6 +14,9 @@ Test docker build:
 
 For ease of using the program, plasmid.py is a python wrapper for `docker run`
 
+## Runtime
+Expect a run time of about 30 to 50 min for using a paired reads file of 300mb using 16 threads.
+
 ## Command line options
 ``` 
 python plasmid.py --help
