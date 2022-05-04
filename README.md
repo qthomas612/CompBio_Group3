@@ -1,16 +1,13 @@
 # CompBio_Group3
 
-This program uses several plasmid identification tools to detect plasmid sequences from fastq files. Tools used include: spades, recycler, platon and plasforest.
+This program uses several plasmid identification tools to detect plasmid sequences from fastq files. Tools used include: spades, platon and plasforest.
 Tools necessary for the use of this program can be accessed through the use of a dockerfile. All quality control of sequence reads should be done before using this pipeline.
 
 Using the Dockerfile:
 1. `git clone` 
 2. `docker build -t plasmid .`
-3. The docker container with the databases can be accessed by running:
-  `docker run --rm --mount type=bind,source=/home/qthomas/data,target=/data -it plasmid:noentrypoint bash`
-    - when writing to /data in the docker container, those files will also be written to /home/qthomas/data.
-    - multiple folders can be bound i.e. `docker run --rm --mount type=bind,source=/home/qthomas/data,target=/data --mount type=bind,source=/home/qthomas/results,target=/results -it plasmid:noentrypoint bash`
-
+3. `python3 plasmid.py -f your/file -o output/location -r readtype_of_input`
+Using `plasmid.py -h` can show a help file for the list of input flags`
 Test docker build:
 
   `python3 test_installation.py`
