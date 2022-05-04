@@ -59,20 +59,5 @@ platon --threads $threads --db ~/db --output ./output/Results/platon/ ./output/R
 # format results
 /root/compile_results.py
 
-#RECYCLER # TK: commented out bc its not currently working
-#conda activate recycler
-#make_fasta_from_fastg.py -g /output/SpadesResults/assembly_graph.fastg -o /output/recycler/assembly_graph.nodes.fasta
-#bwa index /output/recycler/assembly_graph.nodes.fasta
-#bwa mem /output/recycler/assembly_graph.nodes.fasta /output/recycler/R1.fastq.gz /output/recycler/R2.fastq.gz | samtools view -buS - > /output/recycler/reads_pe.bam
-#samtools view -bF 0x0800 /output/recycler/reads_pe.bam > /output/recycler/reads_pe_primary.bam
-#samtools sort /output/recycler/reads_pe_primary.bam -o /output/recycler/reads_pe_primary.sort.bam
-#samtools index /output/recycler/reads_pe_primary.sort.bam
-
-# find largest kmer used by spades
-
-
-#recycle.py -g /output/recycler/assembly_graph.fastg -k 55 -b /output/recycler/reads_pe_primary.sort.bam -i True -o /output/recycler/
-# need to figure out what spades used for k value
-#SPAdes utilizes multisized de Bruijn graph which allows employing different values of k. That is what the K<##> in resutls related to, so we have no set k-value
 
 
