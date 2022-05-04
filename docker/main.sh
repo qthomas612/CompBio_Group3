@@ -2,7 +2,7 @@
 
 
 #Take user input flags
-while getopts t:r:d:1:2: flag
+while getopts t:r:f:1:2: flag
 do
     case "${flag}" in
         t) threads=${OPTARG};;
