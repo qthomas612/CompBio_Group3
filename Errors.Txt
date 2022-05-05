@@ -1,6 +1,9 @@
-PlasForest error:
+/usr/local/bin/main.sh: line 22: [1_2: command not found
+/usr/local/bin/main.sh: line 25: [1_2: command not found
+SPAdes genome assembler v3.15.4
 
-/root/miniconda/lib/python3.9/site-packages/sklearn/base.py:329: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.22.2.post1 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
-https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations
-
-might need to install scikit-learn v0.22.2.post1 instead of the most recent
+Usage: spades.py [options] -o <output_dir>
+spades.py: error: Please specify option (e.g. -1, -2, -s, etc)) for the following paths: ./data/
+/usr/local/bin/main.sh: line 36: [1_2: command not found
+/usr/local/bin/main.sh: line 39: [1_2: command not found
+SPAdes genome assembler v3.15.4 [plasmidSPAdes mode]
