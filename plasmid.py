@@ -19,7 +19,7 @@ if args["readtype"] in ["12","s"]:
     assert os.path.isfile(args['file']), "Could not find the file {}".format(args['file'])
     data =  os.path.realpath(args['file'])
     data_target = os.path.basename(args['file'])
-    docker_str = "docker run --mount type=bind,source="+data+",target=/data/"+data_target+" --mount type=bind,source="+output+",target=/output plasmid:latest /usr/local/bin/main.sh -t "+str(args['threads'])+" -r "+args["readtype"]+" -f "+data_target
+    docker_str = "docker run --mount type=bind,source="+data+",target=/data/"+data_target+" --mount type=bind,source="+output+",target=/output triskos/plasmid-id:latest /usr/local/bin/main.sh -t "+str(args['threads'])+" -r "+args["readtype"]+" -f "+data_target
 
 if args["readtype"] == "1+2":
     assert os.path.isfile(args['forward']), "Could not find the file {}".format(args['file'])
@@ -28,6 +28,6 @@ if args["readtype"] == "1+2":
     forward_target = os.path.basename(args['forward'])
     reverse =  os.path.realpath(args['reverse'])
     reverse_target = os.path.basename(args['reverse'])
-    docker_str = "docker run --mount type=bind,source="+forward+",target=/data/"+forward_target+" --mount type=bind,source="+reverse+",target=/data/"+reverse_target+" --mount type=bind,source="+output+",target=/output plasmid:latest /usr/local/bin/main.sh -t "+str(args['threads'])+" -r "+args["readtype"]+" -1 "+forward_target+ " -2 "+reverse_target
+    docker_str = "docker run --mount type=bind,source="+forward+",target=/data/"+forward_target+" --mount type=bind,source="+reverse+",target=/data/"+reverse_target+" --mount type=bind,source="+output+",target=/output triskos/plasmid-id:latest /usr/local/bin/main.sh -t "+str(args['threads'])+" -r "+args["readtype"]+" -1 "+forward_target+ " -2 "+reverse_target
 
 os.system(docker_str)
