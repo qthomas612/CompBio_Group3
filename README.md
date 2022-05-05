@@ -4,16 +4,9 @@ This program uses several plasmid identification tools to detect plasmid sequenc
 Tools necessary for the use of this program can be accessed through the use of a dockerfile. All quality control of sequence reads should be done before using this pipeline.
 
 Using the Dockerfile:
-1. `git clone`
-2. `cd docker/` 
-3. `docker build -t plasmid .`
-4. `python3 plasmid.py -f your/file -o output/location -r readtype_of_input`
-Using `plasmid.py -h` can show a help file for the list of input flags`
-Test docker build:
-
-  `python3 test_installation.py`
-
-For ease of using the program, plasmid.py is a python wrapper for `docker run`
+1. `wget https://github.com/qthomas612/CompBio_Group3/plasmid.py`
+2. `python3 plasmid.py -t threads <-f your/file OR -1 forward/reads -2 reverse/reads> -o output/location -r readtype`
+Using `plasmid.py -h` will show a help file for the list of input flags
 
 ## Runtime
 Expect a run time of about 30 to 50 min for using a paired reads file of 300mb using 16 threads.
@@ -31,5 +24,3 @@ optional arguments:
   -1 , --forward    Path to forward read fastq file. Used only if the readtype flag is 1+2.
   -2 , --reverse    Path to reverse read fastq file. Used only if the readtype flag is 1+2.
 ```
-
-```docker logs <container id>``` will show the commands running in the container and any error messages
