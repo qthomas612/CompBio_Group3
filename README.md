@@ -8,9 +8,7 @@ All quality control of sequence reads should be done before using this pipeline.
   
 1. `wget https://raw.githubusercontent.com/qthomas612/CompBio_Group3/main/plasmid.py`
 2. `python3 plasmid.py -t threads <-f your/file OR -1 forward/reads -2 reverse/reads> -o output/location -r readtype`
-  
-Running `python3 plasmid.py -h` will show a help file for the list of input flags
-  
+
 ## Example usage
 `python3 plasmid.py -t 16 -r 1+2 -1 SRR17191338_1.fastq -2 SRR17191338_2.fastq`
   
