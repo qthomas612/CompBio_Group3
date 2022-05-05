@@ -3,7 +3,7 @@
 import os, argparse, multiprocessing
 
 ap = argparse.ArgumentParser()
-ap.add_argument('-t','--threads', type = int, default = 4, help = 'Number of CPUs to use in computation. Defaults to half the number of available CPUs', metavar = '')
+ap.add_argument('-t','--threads', type = int, default = 4, help = 'Number of CPUs to use in computation. Defaults to 4 threads', metavar = '')
 ap.add_argument('-f','--file', type = str, required = False,  help = 'input fasta or fastq file. Used only if the readtype flag is 12 or s', metavar = '')
 ap.add_argument('-o','--output', type = str, default = "./output", help = 'directory to write results to', metavar = '')
 ap.add_argument('-r','--readtype', type = str, required = False, help = "Type of reads for spades input. Options are 12, 1+2, or s. If 1+2, then the -1 and -2 flags must be set", metavar = '')
