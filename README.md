@@ -19,12 +19,12 @@ Expect this example to finish in about 40 minutes using 16 threads. More time wi
 python3 plasmid.py --help
 
 optional arguments:
-  -h, --help       show this help message and exit
-  -t , --threads   number of CPUs to use in computation. Defaults to 4 threads
+  -h, --help        show this help message and exit
+  -t , --threads    Number of CPUs to use in computation. Defaults to 4 threads
   -f , --file       input fasta or fastq file. Used only if the readtype flag is 12 or s
   -o , --output     directory to write results to, defaults to ./output
-  -r , --readtype   Type of reads for SPAdes input. Options are 12, 1+2, or s. If 1+2, then the -1 and -2 flags must
+  -r , --readtype   Type of reads for spades input. Options are 12, 1+2, or s. If 1+2, then the -1 and -2 flags must
                     be set
-  -1 , --forward    forward read fasta or fastq file for SPAdes input. Used only if the readtype flag is 1+2
-  -2 , --reverse    reverse read fasta or fastq file for SPAdes input. Used only if the readtype flag is 1+2
+  -1 , --forward    forward read fasta or fastq file for spades input. Used only if the readtype flag is 1+2
+  -2 , --reverse    reverse read fasta or fastq file for spades input. Used only if the readtype flag is 1+2
 ```
