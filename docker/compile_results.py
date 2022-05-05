@@ -14,14 +14,7 @@ with open("/output/SPAdes/contigs.fasta") as handle:
     for seq in record:
         contigs.append(seq.id)
 
-# for testing
-# with open("/home/tkosciuch/Results01180/SPAdes/contigs.fasta") as handle:
-#     record = list(SeqIO.parse(handle, "fasta"))
-#     for seq in record:
-#         contigs.append(seq.id)
-
 #### platon
-# "/home/tkosciuch/Results01180/platon/contigs.plasmid.fasta"
 platon_plasmid = []
 platon_chromosome = []
 
@@ -79,14 +72,15 @@ blastn_cline = NcbiblastnCommandline(query = "/output/plasmidSPAdes/contigs.fast
 
 stdout, stderr = blastn_cline()
 
-plasSPAdes_results = [["plasmidSPAdes plasmid","closest SPAdes contig"]]
+plasSPAdes_results = [["plasmidSPAdes plasmid","closest SPAdes contig","E score","Bit score"]]
 
 for record in NCBIXML.parse(open("/output/plasmidSPAdes/plasmidSPAdes_blast.xml")): 
     if record.alignments:
         query = record.query.split("_component_")[0]
         match = record.alignments[0].title.split(" No definition line")[0]
-        plasSPAdes_results.append([query,match])
-        #results[record.query] = record.alignments[0].title
+        escore = record.alignments[0].hsps[0].expect
+        bitscore = record.alignments[0].hsps[0].score
+        plasSPAdes_results.append([query,match,escore,bitscore])
 
 numpy.savetxt("/output/plasmidSPAdes_closest_conitg.csv", plasSPAdes_results, delimiter =", ", fmt ='% s')
 

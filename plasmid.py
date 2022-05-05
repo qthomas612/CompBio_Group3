@@ -12,8 +12,8 @@ ap.add_argument('-2','--reverse', type = str, required = False, help = "reverse 
 
 args = vars(ap.parse_args())
 
+os.makedirs(args['output'],exist_ok = False)
 output = os.path.realpath(args['output'])
-os.makedirs(args['output'],exist_ok = True)
 
 if args["readtype"] in ["12","s"]:
     assert os.path.isfile(args['file']), "Could not find the file {}".format(args['file'])

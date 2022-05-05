@@ -15,7 +15,7 @@ ap.add_argument('-m','--main', type = str, required = False, help = "path to loc
 args = vars(ap.parse_args())
 
 output = os.path.realpath(args['output'])
-os.makedirs(args['output'],exist_ok = True)
+os.makedirs(args['output'],exist_ok = False)
 mainsh =  os.path.realpath(args['main'])
 mainsh_target = os.path.basename(args['main'])
 
@@ -23,7 +23,7 @@ if args["readtype"] in ["12","s"]:
     assert os.path.isfile(args['file']), "Could not find the file {}".format(args['file'])
     data =  os.path.realpath(args['file'])
     data_target = os.path.basename(args['file'])
-    docker_str = "docker run --rm --mount type=bind,source="+mainsh+",target=/data/"+mainsh_target+" --mount type=bind,source="+data+",target=/data/"+data_target+" --mount type=bind,source="+output+",target=/output plasmid:latest chmod 755 /data/main.sh ; /data/main.sh -t "+str(args['threads'])+" -r "+args["readtype"]+" -f "+data_target
+    #docker_str = "docker run --rm --mount type=bind,source="+mainsh+",target=/data/"+mainsh_target+" --mount type=bind,source="+data+",target=/data/"+data_target+" --mount type=bind,source="+output+",target=/output plasmid:latest chmod 755 /data/main.sh ; /data/main.sh -t "+str(args['threads'])+" -r "+args["readtype"]+" -f "+data_target
 
 if args["readtype"] == "1+2":
     assert os.path.isfile(args['forward']), "Could not find the file {}".format(args['file'])
@@ -32,6 +32,8 @@ if args["readtype"] == "1+2":
     forward_target = os.path.basename(args['forward'])
     reverse =  os.path.realpath(args['reverse'])
     reverse_target = os.path.basename(args['reverse'])
-    docker_str = "docker run --rm --mount type=bind,source="+mainsh+",target=/data/"+mainsh_target+" --mount type=bind,source="+forward+",target=/data/"+forward_target+" --mount type=bind,source="+reverse+",target=/data/"+reverse_target+" --mount type=bind,source="+output+",target=/output plasmid:latest chmod 755 /data/main.sh ; /data/main.sh -t "+str(args['threads'])+" -r "+args["readtype"]+" -1 "+forward_target+ " -2 "+reverse_target
+    #docker_str = "docker run --rm --mount type=bind,source="+mainsh+",target=/data/"+mainsh_target+" --mount type=bind,source="+forward+",target=/data/"+forward_target+" --mount type=bind,source="+reverse+",target=/data/"+reverse_target+" --mount type=bind,source="+output+",target=/output plasmid:latest chmod 755 /data/main.sh ; /data/main.sh -t "+str(args['threads'])+" -r "+args["readtype"]+" -1 "+forward_target+ " -2 "+reverse_target
+    docker_str = "docker run --rm --mount type=bind,source="+mainsh+",target=/data/"+mainsh_target+" --mount type=bind,source="+forward+",target=/data/"+forward_target+" --mount type=bind,source="+reverse+",target=/data/"+reverse_target+" --mount type=bind,source="+output+",target=/output -it plasmid:latest bash"
 
+print(docker_str)
 os.system(docker_str)
