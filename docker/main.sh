@@ -16,7 +16,7 @@ do
 done
 
 #make output directory of results
-mkdir output ./output/Results ./output/Results/blast_db ./output/Results/plasforest ./output/Results/platon ./output/Results/SPAdes ./output/Results/plasmidSPAdes
+mkdir output ./output ./output/blast_db ./output/plasforest ./output/platon ./output/SPAdes ./output/plasmidSPAdes
 
 #SPADES ASSEMBLY
 if [$readtype = "12"]
