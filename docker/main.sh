@@ -14,7 +14,7 @@ do
            exit;;
     esac
 done
-
+cd /
 #make output directory of results
 mkdir output ./output ./output/blast_db ./output/plasforest ./output/platon ./output/SPAdes ./output/plasmidSPAdes
 
