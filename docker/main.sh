@@ -19,10 +19,10 @@ cd /
 mkdir output ./output ./output/blast_db ./output/plasforest ./output/platon ./output/SPAdes ./output/plasmidSPAdes
 
 #SPADES ASSEMBLY
-if [$readtype = "12"]
+if [ $readtype = "12" ]
 then
     spades.py -t $threads --12 ./data/$file -o ./output/SPAdes
-elif [$readtype = "1+2"]
+elif [ $readtype = "1+2" ]
 then
     spades.py -t $threads -1 ./data/$1 -2 ./data/$2 -o ./output/SPAdes
 else
@@ -33,10 +33,10 @@ fi
 #double check this command is right || Command is right and runs without errors
 #spades.py --plasmid -s /data/$data -o /output/plasmidSPAdes
 
-if [$readtype = "12"]
+if [ $readtype = "12" ]
 then
     spades.py -t $threads --plasmid --12 ./data/$file -o ./output/plasmidSPAdes
-elif [$readtype = "1+2"]
+elif [ $readtype = "1+2" ]
 then
     spades.py -t $threads --plasmid -1 ./data/$1 -2 ./data/$2 -o ./output/plasmidSPAdes
 else
