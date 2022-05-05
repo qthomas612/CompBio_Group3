@@ -27,5 +27,5 @@ optional arguments:
   -r , --readtype   Type of reads for SPAdes input. Options are 12, 1+2, or s. If 1+2, then the -1 and -2 flags must
                     be set
   -1 , --forward    forward read fasta or fastq file for SPAdes input. Used only if the readtype flag is 1+2
-  -2 , --reverse    reverse read fasta or fastq file for SPAdes input.Used only if the readtype flag is 1+2
+  -2 , --reverse    reverse read fasta or fastq file for SPAdes input. Used only if the readtype flag is 1+2
 ```

@@ -8,7 +8,7 @@ ap.add_argument('-f','--file', type = str, required = False,  help = 'input fast
 ap.add_argument('-o','--output', type = str, default = "./output", help = 'directory to write results to, defaults to ./output', metavar = '')
 ap.add_argument('-r','--readtype', type = str, required = False, help = "Type of reads for spades input. Options are 12, 1+2, or s. If 1+2, then the -1 and -2 flags must be set", metavar = '')
 ap.add_argument('-1','--forward', type = str, required = False, help = "forward read fasta or fastq file for spades input. Used only if the readtype flag is 1+2", metavar = '')
-ap.add_argument('-2','--reverse', type = str, required = False, help = "reverse read fasta or fastq file for spades input.Used only if the readtype flag is 1+2", metavar = '')
+ap.add_argument('-2','--reverse', type = str, required = False, help = "reverse read fasta or fastq file for spades input. Used only if the readtype flag is 1+2", metavar = '')
 
 args = vars(ap.parse_args())
 
