@@ -30,4 +30,4 @@ if args["readtype"] == "1+2":
     reverse_target = os.path.basename(args['reverse'])
     docker_str = "docker run --mount type=bind,source="+forward+",target=/data/"+forward_target+" --mount type=bind,source="+reverse+",target=/data/"+reverse_target+" --mount type=bind,source="+output+",target=/output plasmid:latest /usr/local/bin/main.sh -t "+str(args['threads'])+" -r "+args["readtype"]+" -1 "+forward_target+ " -2 "+reverse_target
 
-print(docker_str)
+os.system(docker_str)
