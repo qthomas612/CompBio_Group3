@@ -4,9 +4,10 @@ This program uses several plasmid identification tools to detect plasmid sequenc
 Tools necessary for the use of this program can be accessed through the use of a dockerfile. All quality control of sequence reads should be done before using this pipeline.
 
 Using the Dockerfile:
-1. `git clone` 
-2. `docker build -t plasmid .`
-3. `python3 plasmid.py -f your/file -o output/location -r readtype_of_input`
+1. `git clone`
+2. `cd docker/` 
+3. `docker build -t plasmid .`
+4. `python3 plasmid.py -f your/file -o output/location -r readtype_of_input`
 Using `plasmid.py -h` can show a help file for the list of input flags`
 Test docker build:
 
