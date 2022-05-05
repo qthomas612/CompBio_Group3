@@ -26,6 +26,7 @@ elif [ $readtype = "1+2" ]
 then
     spades.py -t $threads -1 ./data/$forward -2 ./data/$reverse -o ./output/SPAdes
 elif [ $readtype = "s" ]
+then
     spades.py -t $threads -$readtype ./data/$file -o ./output/SPAdes
 fi
 
@@ -40,6 +41,7 @@ elif [ $readtype = "1+2" ]
 then
     spades.py -t $threads --plasmid -1 ./data/$forward -2 ./data/$reverse -o ./output/plasmidSPAdes
 elif [ $readtype = "s" ]
+then
     spades.py -t $threads --plasmid -$readtype ./data/$file -o ./output/plasmidSPAdes
 fi
 
