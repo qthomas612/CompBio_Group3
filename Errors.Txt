@@ -1,9 +1,0 @@
-/usr/local/bin/main.sh: line 22: [1_2: command not found
-/usr/local/bin/main.sh: line 25: [1_2: command not found
-SPAdes genome assembler v3.15.4
-
-Usage: spades.py [options] -o <output_dir>
-spades.py: error: Please specify option (e.g. -1, -2, -s, etc)) for the following paths: ./data/
-/usr/local/bin/main.sh: line 36: [1_2: command not found
-/usr/local/bin/main.sh: line 39: [1_2: command not found
-SPAdes genome assembler v3.15.4 [plasmidSPAdes mode]
