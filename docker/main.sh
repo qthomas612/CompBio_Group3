@@ -48,7 +48,7 @@ fi
 #run plasForest
 cd /root/PlasForest
 PlasForest.py --threads $threads -i ./output/Results/SPAdes/contigs.fasta  -o ./output/Results/plasforest/plasforestResults.csv
-cd
+cd /
 
 #return to previous directory
 #cd ../../ # TK: I don't think we need to move around directories as all the tools should be in $PATH
