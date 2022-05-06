@@ -57,5 +57,5 @@ python3 /root/compile_results.py
 # summarize results
 python3 /root/summarize_results.py
 
-
-
+# remove unneeded file
+rm /output/plasforest_platon.csv
