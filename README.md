@@ -34,3 +34,7 @@ optional arguments:
   -1 , --forward    forward read fasta or fastq file for SPAdes input. Used only if the readtype flag is 1+2
   -2 , --reverse    reverse read fasta or fastq file for SPAdes input. Used only if the readtype flag is 1+2
 ```
+
+## Output
+
+This program creates a folder named output that contains all files produced by the pipeline. There are 3 output files produced independent of the individual tools to evaluate plasmid prediction across programs. The first is "results.csv" in which all SPAdes contigs are listed with the chromosomal/plasmid prediction for that contig. The second is "plasmidSPAdes_closest_conitg.csv" which has each plasmidSPAdes contig and the corresponding SPAdes match along with the escore and bit score for that match. The last is "summary_results.txt" which contains a summary of the number of plasmids each tool identified as well as the number of overlap between tools. You can find output of individual tools in their corresponding output folder. 
