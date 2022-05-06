@@ -43,5 +43,10 @@ COPY compile_results.py /root/compile_results.py
 
 RUN chmod 755 /root/compile_results.py
 
+COPY summarize_results.py /root/summarize_results.py
+
+RUN chmod 755 /root/summarize_results.py
+
+
 # this main.sh is the script for our program. As the path to main.sh is not specified, it assumes it's added to path
 #ENTRYPOINT ["main.sh"]

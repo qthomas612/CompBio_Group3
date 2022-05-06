@@ -54,5 +54,8 @@ platon --threads $threads --db ~/db --output /output/platon/ /output/SPAdes/cont
 # format results
 python3 /root/compile_results.py
 
+# summarize results
+python3 /root/summarize_results.py
+
 
 
