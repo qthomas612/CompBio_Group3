@@ -1,6 +1,6 @@
 # CompBio_Group3
 
-This program uses several plasmid identification tools to detect plasmid sequences from fastq files. Tools used include: spades, platon and plasforest. SPAdes is used to align reads into contigs, and then platon and plasforest classify contigs as plasmid or chromosome. SPAdes is run a seperate time using the `--plasmid` flag to detect plasmids. The SPAdes plasmids are matched to the original SPAdes contigs by a local BLASTN.
+This program uses several plasmid identification tools to detect plasmid sequences from fastq files. Tools used include: SPAdes, platon and plasForest. SPAdes is used to align reads into contigs, and then platon and plasforest classify contigs as plasmid or chromosome. SPAdes is run a seperate time using the `--plasmid` flag to detect plasmids. The SPAdes plasmids are matched to the original SPAdes contigs by a local BLASTN.
   
 All quality control of sequence reads should be done before using this pipeline.
   
