@@ -11,7 +11,7 @@ All quality control of sequence reads should be done before using this pipeline.
 
 ## Example Data
 
-E. coli practice data can be downloaded at https://www.ncbi.nlm.nih.gov/sra/SRX13373163[accn]
+E. coli practice data can be downloaded at https://www.ncbi.nlm.nih.gov/sra/SRX13373163[accn]. 
 Alternatively you can download with SRA-toolkit using the commands:
 1. `prefetch SRR17191338`
 2. `fasterq-dump --split-files SRR17191338/SRR17191338.sra
