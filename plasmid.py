@@ -20,7 +20,7 @@ if args["readtype"] in ["12","s"]:
     data =  os.path.realpath(args['file'])
     data_target = os.path.basename(args['file'])
     docker_str = "docker run --mount type=bind,source="+data+",target=/data/"+data_target+" --mount type=bind,source="+output+",target=/output triskos/plasmid-id:latest /usr/local/bin/main.sh -t "+str(args['threads'])+" -r "+args["readtype"]+" -f "+data_target
-##Sets up the correct docker string based on the readtype input of 1=2
+##Sets up the correct docker string based on the readtype input of 1+2
 if args["readtype"] == "1+2":
     assert os.path.isfile(args['forward']), "Could not find the file {}".format(args['file'])
     assert os.path.isfile(args['reverse']), "Could not find the file {}".format(args['file'])
