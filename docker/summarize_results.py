@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu May  5 15:47:31 2022
-
-@author: QuinnThomas
-"""
 
 import pandas as pd
 #Path to csv files
