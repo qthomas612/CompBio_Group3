@@ -32,7 +32,6 @@ main["plasmidSPAdes"] = spadesCol
 #export final datafram
 main.to_csv('/output/results.csv')
 
-
 #calculate counts for chromosomal and plasmid identifications
 outfile.write(str(main["platon"].value_counts()))
 outfile.write('\n')
