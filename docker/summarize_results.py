@@ -7,7 +7,7 @@ import pandas as pd
 main = pd.read_csv("/output/plasforest_platon.csv")
 spades = pd.read_csv("/output/plasmidSPAdes_closest_conitg.csv")
 #create output file
-outfile = open("/output/results_Summary.txt", 'w')
+outfile = open("/output/results_summary.txt", 'w')
 
 spadesCol = []
 mainArr = main["SPAdes contig"].to_numpy()
@@ -30,7 +30,7 @@ for contig in mainArr:
 main["plasmidSPAdes"] = spadesCol
 
 #export final datafram
-main.to_csv('~/Downloads/final.csv')
+main.to_csv('~/output/final.csv')
 
 
 #calculate counts for chromosomal and plasmid identifications
