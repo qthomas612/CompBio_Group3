@@ -9,6 +9,13 @@ All quality control of sequence reads should be done before using this pipeline.
 1. `wget https://raw.githubusercontent.com/qthomas612/CompBio_Group3/main/plasmid.py`
 2. `python3 plasmid.py -t threads <-f your/file OR -1 forward/reads -2 reverse/reads> -o output/location -r readtype`
 
+## Example Data
+
+E. coli practice data can be downloaded at https://www.ncbi.nlm.nih.gov/sra/SRX13373163[accn]
+Alternatively you can download with SRA-toolkit using the commands:
+1. `prefetch SRR17191338`
+2. `fasterq-dump --split-files SRR17191338/SRR17191338.sra
+
 ## Example usage
 `python3 plasmid.py -t 16 -r 1+2 -1 SRR17191338_1.fastq -2 SRR17191338_2.fastq`
   
