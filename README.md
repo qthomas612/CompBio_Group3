@@ -6,7 +6,7 @@ All quality control of sequence reads should be done before using this pipeline.
 
 ## Requirements
   
-Python3
+Python3  
 Docker
   
 ## Using the program
